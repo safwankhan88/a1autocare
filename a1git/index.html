@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A1 Auto Care Shahada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="https://lh3.googleusercontent.com/68og26CRJd8zWMrHTeYVoFb7GFq4n7ZItZ_Q72rmrBI6Yvfit212xfpk0JmYEVpA7JHgtaEb9mxL16Qz=s265-w265-h265" alt="A1 Auto Care Logo">
+    <h1>A1 Auto Care Shahada</h1>
+    <p>Since 1997 – Your Car, Our Care!</p>
+    <button class="menu-button" onclick="toggleDropdown()">☰ Menu</button>
+    <div id="dropdownMenu">
+      <a href="#" onclick="showSection('founder'); return false;">Founder</a>
+      <a href="#" onclick="showSection('our-team'); return false;">Our Team</a>
+      <a href="#" onclick="showSection('experience'); return false;">Experience</a>
+      <a href="#" onclick="showSection('garage-certificates'); return false;">Garage Certificates</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/a1_auto_care_shahada" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/share/1AieobAc6c/" target="_blank">Facebook</a>
+      <a href="https://youtube.com/@a1autopartsgarage742" target="_blank">YouTube</a>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#garage">Garage</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+    <a href="#booking">Booking</a>
+  </nav>
+
+  <!-- Founder -->
+  <section id="founder" class="hidden">
+    <div class="founder-section">
+    <img src="firozkhan.jpg.png" class="founder-img">
+
+    <div class="founder-text">
+        <h2>FIROZ KHAN</h2>
+        <h4>MULTI EXPERT MECHANICAL</h4>
+        <p>
+            Established in 1997, A1 Auto Care Shahada is the proud vision of Mr. Firoz Khan...
+        </p>
+         The founder of A1 Auto Care is a dedicated automotive professional with a strong passion for vehicles 
+         and hands-on mechanical excellence. With years of practical experience in the garage industry, 
+         he has built his expertise through real-world problem-solving and continuous learning.</p>
+    </div>
+</div>
+    <button class="back-button" onclick="goBack()">← Back</button>
+  </section>
+
+  <!-- Our Team -->
+  <section id="our-team" class="hidden">
+    <h2>OUR TEAM</h2>
+
+    <div class="team-container">
+
+        <div class="team-card">
+            <img src="farhankhan.jpg.png" alt="Farhan Khan" class="team-img">
+            <h3>FARHAN KHAN</h3>
+            <p>Senior mechanic,<br> certified mechanic</p> Quality in every repair</p>
+               Fast & flawless execution</p> Trusted technical authority</p>
+        </div>
+
+        <div class="team-card">
+            <img src="rehankhan.jpg.png" alt="Reehaan Khan" class="team-img">
+            <h3>REEHAAN KHAN</h3>
+            <p>B.E mechanical Engineer<br> Spare handling & MANAGER</p>
+        </div>
+        <div class="team-card">
+            <img src="safwankhan.jpg.png" alt="SAFWAN KHAN" class="team-img">
+            <h3>SAFWAN KHAN</h3>
+            <p>COMPUTER & SOFTWARE Engineer<br> DIAGNOSTIC Expert</p>
+            <p>Understanding of car ECU</p>
+               Problem-solving approach</p>
+          </div>
+    </div>
+    <button class="back-button" onclick="goBack()">← Back</button>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="hidden">
+    <h2>Our Experience</h2>
+    <p>We have over 25 years of hands-on experience servicing all types of vehicles...</p>
+    <button class="back-button" onclick="goBack()">← Back</button>
+  </section>
+
+  <!-- Garage Certificates -->
+  <section id="garage-certificates" class="hidden">
+    <h2>Garage Certificates</h2>
+    <div class="gallery">
+      <img src="greaves_certificate.jpg.jpeg" alt="Certificate 1">
+      <img src="certificate2.jpg" alt="Certificate 2">
+    </div>
+    <button class="back-button" onclick="goBack()">← Back</button>
+  </section>
+
+  <!-- Garage / About -->
+  <section id="garage">
+    <h2>About Our Garage</h2>
+    <p>With over a decade of experience, we offer engine diagnostics, AC servicing, oil changes, and more...</p>
+    <p2>“Gaadi start nahi ho rahi?”
+    <p>“AC cooling nahi de raha?”</p>
+        “Long trip pe jaane se darr lagta hai?”</p2>
+   <h3> To uske liye hum hai na, “A1 Auto Care me aapki har problem ka solution hai”</h3>   
+   <h>“Aapki gaadi sirf machine nahi hai — wo aapki zimmedari hai. Aur hum us zimmedari ko samajhte hain.”</h>
+   <h3>“Why People Trust Us”</h3>
+   <p>“Hum guess nahi karte, diagnostics karte hain”</p>
+      “Hum cheap nahi, honest service dete hain”</p>
+      “Hum fast kaam karte hain, lekin quality compromise nahi”</p>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services">
+
+    <!-- Services Hero -->
+    <div class="services-hero">
+      <div class="eyebrow">A1 Auto Care Shahada</div>
+      <h2>Our <em>Services</em></h2>
+      <p class="services-hero-sub">Professional auto care aur genuine parts — ek hi jagah pe. Since 1997, aapki gaadi hamare haath mein safe hai.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Years Experience</div></div>
+        <div class="stat"><div class="stat-num">5K+</div><div class="stat-label">Happy Customers</div></div>
+        <div class="stat"><div class="stat-num">7</div><div class="stat-label">Services</div></div>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-wrap">
+      <button class="filter-btn active" data-filter="all">All Services</button>
+      <button class="filter-btn" data-filter="repair">Repair</button>
+      <button class="filter-btn" data-filter="parts">Parts</button>
+      <button class="filter-btn" data-filter="care">Care & Wash</button>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid-wrap">
+      <div class="services-grid">
+
+        <div class="svc-card" data-category="parts"
+             data-title="Auto Parts Sales"
+             data-desc="Genuine aur aftermarket parts — engine se lekar body parts tak. Sabhi car models ke liye available. OEM-grade quality guarantee ke saath."
+             data-badge="In-Stock Parts"
+             data-features="Genuine OEM parts available|All Indian & imported car models|Fast delivery & pickup|Expert parts consultation">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="card-title">Auto Parts Sales</div>
+          <div class="card-desc">Genuine aur aftermarket parts — engine se lekar body parts tak. Sabhi car models ke liye available.</div>
+          <div class="card-footer">
+            <span class="badge">In-Stock Parts</span>
+            <button class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <div class="svc-card" data-category="repair"
+             data-title="Car Repair & Servicing"
+             data-desc="Engine tune-up, brakes, suspension aur complete car service — certified mechanics ke saath. Har kaam pe quality guarantee."
+             data-badge="All Makes & Models"
+             data-features="Engine diagnostics & tune-up|Brake & suspension repair|Certified mechanics|Service history record">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <div class="card-title">Car Repair & Servicing</div>
+          <div class="card-desc">Engine tune-up, brakes, suspension aur complete car service — certified mechanics ke saath.</div>
+          <div class="card-footer">
+            <span class="badge">All Makes & Models</span>
+            <button class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <div class="svc-card" data-category="repair"
+             data-title="Oil Change & Maintenance"
+             data-desc="Quick oil change, filter replacement aur routine maintenance — aapki gaadi ko fresh rakhein. Synthetic aur mineral oil dono available."
+             data-badge="Quick Service"
+             data-features="Synthetic & mineral oil options|Oil filter replacement|30-min quick turnaround|Multi-point inspection">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/>
+            </svg>
+          </div>
+          <div class="card-title">Oil Change & Maintenance</div>
+          <div class="card-desc">Quick oil change, filter replacement aur routine maintenance — aapki gaadi ko fresh rakhein.</div>
+          <div class="card-footer">
+            <span class="badge">Quick Service</span>
+            <button class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <div class="svc-card" data-category="repair"
+             data-title="Denting & Painting"
+             data-desc="Dents remove karna, scratch repair aur original factory colour mein professional painting. Computerized colour matching system use hota hai."
+             data-badge="OEM Color Match"
+             data-features="Computerized color matching|PDR (Paintless Dent Repair)|Full body painting|Scratch & scuff removal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 13.5V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5.5"/><path d="M12 3 L3 8.5 L12 14 L21 8.5 Z"/>
+            </svg>
+          </div>
+          <div class="card-title">Denting & Painting</div>
+          <div class="card-desc">Dents remove karna, scratch repair aur original factory colour mein professional painting.</div>
+          <div class="card-footer">
+            <span class="badge">OEM Color Match</span>
+            <button class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <div class="svc-card" data-category="repair"
+             data-title="AC Repair"
+             data-desc="AC gas refilling, compressor repair aur full cooling system checkup — summer mein cool rahein. All refrigerant types supported."
+             data-badge="Gas Top-Up"
+             data-features="Gas leak detection & refilling|Compressor replacement|Condenser & evaporator service|Cabin filter change">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12h2m16 0h2M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/><circle cx="12" cy="12" r="5"/>
+            </svg>
+          </div>
+          <div class="card-title">AC Repair</div>
+          <div class="card-desc">AC gas refilling, compressor repair aur full cooling system checkup — summer mein cool rahein.</div>
+          <div class="card-footer">
+            <span class="badge">Gas Top-Up</span>
+            <button class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <div class="svc-card" data-category="repair"
+             data-title="Battery & Electrical"
+             data-desc="Battery testing, replacement aur complete electrical diagnostics — starting problem ka permanent solution. All battery brands available."
+             data-badge="Same-Day Fix"
+             data-features="Battery health testing|Jump-start & replacement|Wiring & fuse diagnostics|Alternator & starter repair">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2m4-2v2"/>
+            </svg>
+          </div>
+          <div class="card-title">Battery & Electrical</div>
+          <div class="card-desc">Battery testing, replacement aur complete electrical diagnostics — starting problem ka permanent solution.</div>
+          <div class="card-footer">
+            <span class="badge">Same-Day Fix</span>
+            <button class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <div class="svc-card" data-category="care"
+             data-title="Car Washing & Detailing"
+             data-desc="Exterior wash, interior vacuuming, polish aur full detailing — showroom jaisi chamak ghar ke paas. Premium detailing packages available."
+             data-badge="Interior + Exterior"
+             data-features="Foam wash & hand polish|Interior deep clean|Dashboard dressing|Ceramic coating available">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+            </svg>
+          </div>
+          <div class="card-title">Car Washing & Detailing</div>
+          <div class="card-desc">Exterior wash, interior vacuuming, polish aur full detailing — showroom jaisi chamak ghar ke paas.</div>
+          <div class="card-footer">
+            <span class="badge">Interior + Exterior</span>
+            <button class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h3>Book an Appointment Today</h3>
+          <p>Call us ya walk-in karein — Mon–Sat, 9AM to 7PM. Hum ready hain!</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="tel:+919420443588" class="cta-btn">📞 +91 94204 43588</a>
+          <a href="tel:+918408802188" class="cta-btn">📞 +91 8408802188</a>
+           <a href="https://wa.me/918408802188" target="_blank" class="cta-btn-outline">💬 WhatsApp</a></div>
+           <a href="https://wa.me/919420443588" target="_blank" class="cta-btn-outline">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipNAJDVarg6anjqyB9RlVRIP5WLtFE8IftBJK9-s=s680-w680-h510-rw" alt="Workshop 1">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipO-jxX8EFDaG00atmWDT4odZO8ay8dey94GotsA=w141-h101-n-k-no-nu" alt="Workshop 2">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD0phMdgvUr0HRyJW6R_JZdf_Ab0g1ZljSVg&s" alt="Customer Car">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipPXfqBTOfbTEjwesuZGgOVuVIw4qbklKJGAiQmz=w141-h235-n-k-no-nu" alt="Service Bay">
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>Customer Testimonials</h2>
+    <div class="grid">
+      <div class="testimonial">"Best service in town!" – Ravi S.</div>
+      <div class="testimonial">"I trust them with my car every time." – Meena P.</div>
+      <div class="testimonial">"High-quality service!" – Mr. Shaikh</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> A1 Auto Parts & Garage, Khetiya Road, Shahada</p>
+    <p><strong>Phone:</strong> +91 94204 43588</p>
+    p><strong>Phone:</strong> +91 98408802188</p>
+    <p><strong>Email:</strong> a1autocare@gmail.com</p>
+    <p><a href="https://wa.me/919420443588" target="_blank">Chat on WhatsApp</a></p>
+    <p><a href="https://wa.me/918408802188" target="_blank">Chat on WhatsApp</a></p>
+    <iframe src="https://www.google.com/maps?q=Shahada+Maharashtra&output=embed" width="100%" height="250" style="border:0;" allowfullscreen></iframe>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking">
+    <h2>Book a Service</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <input type="text" id="model" placeholder="Vehicle Model" required>
+      <textarea id="issue" placeholder="Describe the issue or service needed..." rows="4"></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 A1 Auto Care Shahada | Khetiya Road, Shahada | <a href="tel:+919420443588">+91 94204 43588</a> 
+      <a href="tel:+918408802188">+91 8408802188</a> | Open: Mon–Sat 9AM–7PM</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-icon" id="modalIcon"></div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <span class="badge modal-badge" id="modalBadge"></span>
+      <div class="modal-features" id="modalFeatures"></div>
+    </div>
+  </div>
+
+   <script src="script.js"></script>
+
+</body>
+</html>
