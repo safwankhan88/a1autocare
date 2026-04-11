@@ -53,14 +53,38 @@ function sendToWhatsApp(event) {
   window.open("https://wa.me/919420443588?text=" + message, "_blank");
 }
 
-/* ── Service Cards Animation (mobile fix) ── */
+/* ── Service Cards Animation ── */
 document.addEventListener("DOMContentLoaded", function() {
   var svcCards = document.querySelectorAll('.svc-card');
   var grid = document.querySelector('.services-grid');
 
   if (!grid || !svcCards.length) return;
 
-  /* IntersectionObserver — works on mobile too */
+  function animateVisibleCards() {
+    var visibleCards = Array.from(svcCards).filter(function(c) {
+      return !c.classList.contains('svc-hidden') && !c.classList.contains('visible');
+    });
+    visibleCards.forEach(function(card, i) {
+      var rect = card.getBoundingClientRect();
+      var inView = rect.top < window.innerHeight + 50 && rect.bottom > -50;
+      if (inView) {
+        setTimeout(function() { card.classList.add('visible'); }, 80 + i * 70);
+      }
+    });
+  }
+
+  /* Run on load — catches cards already in viewport */
+  setTimeout(animateVisibleCards, 100);
+
+  /* Run on scroll */
+  window.addEventListener('scroll', animateVisibleCards, { passive: true });
+
+  /* Run on orientation change (screen rotate) */
+  window.addEventListener('orientationchange', function() {
+    setTimeout(animateVisibleCards, 300);
+  });
+
+  /* IntersectionObserver as additional trigger */
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
@@ -72,11 +96,8 @@ document.addEventListener("DOMContentLoaded", function() {
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.05, rootMargin: "0px 0px -50px 0px" });
+    }, { threshold: 0.01, rootMargin: "0px 0px 0px 0px" });
     io.observe(grid);
-  } else {
-    /* Fallback for older browsers — just show all cards */
-    svcCards.forEach(function(card) { card.classList.add('visible'); });
   }
 
   /* ── Filter ── */
