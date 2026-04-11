@@ -45,7 +45,11 @@ header::after {
   top: -50%; left: -50%;
   width: 200%; height: 200%;
   background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+  -webkit-animation: headerGlow 8s linear infinite;
   animation: headerGlow 8s linear infinite;
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   pointer-events: none;
 }
 header img {
@@ -95,9 +99,13 @@ header p {
   from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@-webkit-keyframes headerGlow {
+  0%   { -webkit-transform: rotate(0deg) translateZ(0); }
+  100% { -webkit-transform: rotate(360deg) translateZ(0); }
+}
 @keyframes headerGlow {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0%   { transform: rotate(0deg) translateZ(0); }
+  100% { transform: rotate(360deg) translateZ(0); }
 }
 #dropdownMenu a {
   display: block;
@@ -177,7 +185,14 @@ h2 {
   padding-left: 15px;
 }
 .hidden { display: none !important; }
-.fade-in { animation: fadeIn 0.5s ease forwards; }
+.fade-in {
+  -webkit-animation: fadeIn 0.5s ease forwards;
+  animation: fadeIn 0.5s ease forwards;
+}
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -296,7 +311,11 @@ button[type="submit"]:hover { background: #eed600; transform: translateY(-2px); 
   top: -50%; left: -50%;
   width: 200%; height: 200%;
   background: radial-gradient(circle, rgba(255,255,255,0.07), transparent 60%);
+  -webkit-animation: headerGlow 8s linear infinite;
   animation: headerGlow 8s linear infinite;
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   pointer-events: none;
 }
 .eyebrow {
@@ -414,17 +433,22 @@ button[type="submit"]:hover { background: #eed600; transform: translateY(-2px); 
   gap: 10px;
   cursor: pointer;
   box-shadow: var(--shadow);
-  transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.2s;
   opacity: 0;
-  transform: translateY(20px);
+  -webkit-transform: translateY(24px);
+  transform: translateY(24px);
+  -webkit-transition: opacity 0.45s ease, -webkit-transform 0.45s cubic-bezier(.22,.68,0,1.2), box-shadow 0.2s;
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(.22,.68,0,1.2), box-shadow 0.2s;
 }
 .svc-card.visible {
-  animation: fadeUp 0.45s cubic-bezier(.22,.68,0,1.2) forwards;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
+.svc-card:hover {
+  -webkit-transform: translateY(-6px);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
 }
-.svc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
 .svc-card.svc-hidden { display: none; }
 
 .icon-wrap {
