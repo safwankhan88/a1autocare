@@ -5,7 +5,7 @@ function toggleDropdown() {
 document.addEventListener("click", function(e) {
   var menu = document.getElementById("dropdownMenu");
   var btn = document.querySelector(".menu-button");
-  if (!menu.contains(e.target) && e.target !== btn) {
+  if (menu && btn && !menu.contains(e.target) && e.target !== btn) {
     menu.classList.remove("show");
   }
 });
@@ -53,53 +53,88 @@ function sendToWhatsApp(event) {
   window.open("https://wa.me/919420443588?text=" + message, "_blank");
 }
 
-/* ── Service Cards animation ── */
-const svcCards = document.querySelectorAll('.svc-card');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const cards = entry.target.querySelectorAll('.svc-card');
-      cards.forEach((card, i) => {
-        setTimeout(() => card.classList.add('visible'), 80 + i * 70);
-      });
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-const grid = document.querySelector('.services-grid');
-if (grid) observer.observe(grid);
+/* ── Service Cards Animation (mobile fix) ── */
+document.addEventListener("DOMContentLoaded", function() {
+  var svcCards = document.querySelectorAll('.svc-card');
+  var grid = document.querySelector('.services-grid');
 
-/* ── Filter ── */
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    svcCards.forEach(card => {
-      if (filter === 'all' || card.dataset.category === filter) {
-        card.classList.remove('svc-hidden');
-      } else {
-        card.classList.add('svc-hidden');
-      }
+  if (!grid || !svcCards.length) return;
+
+  /* IntersectionObserver — works on mobile too */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var cards = entry.target.querySelectorAll('.svc-card:not(.svc-hidden)');
+          cards.forEach(function(card, i) {
+            setTimeout(function() { card.classList.add('visible'); }, 80 + i * 70);
+          });
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: "0px 0px -50px 0px" });
+    io.observe(grid);
+  } else {
+    /* Fallback for older browsers — just show all cards */
+    svcCards.forEach(function(card) { card.classList.add('visible'); });
+  }
+
+  /* ── Filter ── */
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.dataset.filter;
+      svcCards.forEach(function(card) {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('svc-hidden');
+          /* Re-trigger animation if not already visible */
+          if (!card.classList.contains('visible')) {
+            card.classList.add('visible');
+          }
+        } else {
+          card.classList.add('svc-hidden');
+        }
+      });
     });
   });
-});
 
-/* ── Modal ── */
-const overlay = document.getElementById('modalOverlay');
-svcCards.forEach(card => {
-  card.addEventListener('click', () => {
-    document.getElementById('modalTitle').textContent = card.dataset.title;
-    document.getElementById('modalDesc').textContent = card.dataset.desc;
-    document.getElementById('modalBadge').textContent = card.dataset.badge;
-    const mi = document.getElementById('modalIcon');
-    mi.innerHTML = '';
-    mi.appendChild(card.querySelector('.icon-wrap').cloneNode(true));
-    document.getElementById('modalFeatures').innerHTML =
-      card.dataset.features.split('|').map(f => `<div class="modal-feature">${f}</div>`).join('');
-    overlay.classList.add('open');
+  /* ── Modal ── */
+  var overlay = document.getElementById('modalOverlay');
+  if (!overlay) return;
+
+  svcCards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      document.getElementById('modalTitle').textContent = card.dataset.title || '';
+      document.getElementById('modalDesc').textContent = card.dataset.desc || '';
+      document.getElementById('modalBadge').textContent = card.dataset.badge || '';
+      var mi = document.getElementById('modalIcon');
+      mi.innerHTML = '';
+      var iconClone = card.querySelector('.icon-wrap');
+      if (iconClone) mi.appendChild(iconClone.cloneNode(true));
+      var featuresHtml = (card.dataset.features || '').split('|')
+        .map(function(f) { return '<div class="modal-feature">' + f + '</div>'; })
+        .join('');
+      document.getElementById('modalFeatures').innerHTML = featuresHtml;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  document.getElementById('modalClose').addEventListener('click', function() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   });
 });
-document.getElementById('modalClose').addEventListener('click', () => overlay.classList.remove('open'));
-overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') overlay.classList.remove('open'); });
